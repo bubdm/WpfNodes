@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище NodesModelContainer" CdmEntityContainer="NodesEntities">
+  <EntityContainerMapping StorageEntityContainer="NodesModelStoreContainer" CdmEntityContainer="NodesEntities">
     <EntitySetMapping Name="TablesNodes">
       <EntityTypeMapping TypeName="NodesModel.TablesNodes">
         <MappingFragment StoreEntitySet="TablesNodes">
