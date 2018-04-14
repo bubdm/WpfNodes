@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище NodesModelContainer" CdmEntityContainer="NodesEntities">
+    <EntitySetMapping Name="TablesNodes">
+      <EntityTypeMapping TypeName="NodesModel.TablesNodes">
+        <MappingFragment StoreEntitySet="TablesNodes">
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="NameNode" ColumnName="NameNode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

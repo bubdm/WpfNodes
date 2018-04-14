@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NodesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NodesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TablesNodes" EntityType="NodesModel.TablesNodes" />
+    <AssociationSet Name="FK_TablesNodes_parent_id" Association="NodesModel.FK_TablesNodes_parent_id">
+      <End Role="TablesNodes" EntitySet="TablesNodes" />
+      <End Role="TablesNodes1" EntitySet="TablesNodes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TablesNodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameNode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <NavigationProperty Name="TablesNodes1" Relationship="NodesModel.FK_TablesNodes_parent_id" FromRole="TablesNodes" ToRole="TablesNodes1" />
+    <NavigationProperty Name="TablesNodes2" Relationship="NodesModel.FK_TablesNodes_parent_id" FromRole="TablesNodes1" ToRole="TablesNodes" />
+  </EntityType>
+  <Association Name="FK_TablesNodes_parent_id">
+    <End Type="NodesModel.TablesNodes" Role="TablesNodes" Multiplicity="0..1" />
+    <End Type="NodesModel.TablesNodes" Role="TablesNodes1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TablesNodes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TablesNodes1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
